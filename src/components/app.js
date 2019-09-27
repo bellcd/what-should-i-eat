@@ -37,7 +37,7 @@ class App extends React.Component {
       <div>
         <button onClick={this.getMeal.bind(this)}>Get meal</button>
         <Directions></Directions>
-        <Ingredients>}></Ingredients>
+        <Ingredients ingredients={this.state.meal ? this.state.meal.ingredients : {}}></Ingredients>
       </div>
     );
   }
