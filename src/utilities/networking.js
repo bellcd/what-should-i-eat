@@ -6,10 +6,7 @@ let getRandomMeal = () => {
   return fetch(url)
   .then((res) => res.json())
   .then((res) => {
-    let meal = res.meals[0];
-    organizeMeal(meal);
-    return meal;
-
+    return organizeMeal(res.meals[0]);
   });
 }
 
@@ -24,10 +21,24 @@ let getRandomMeal = () => {
 
 let organizeMeal = (meal) => {
   let keys = Object.keys(meal);
-  keys = keys.filter((key) => {
-    return key.includes('strIngredient') || key.includes('strMeasure');
-  })
-  console.log(keys);
+  meal = keys.reduce((acc, currentValue) => {
+    let ingredientName;
+    let ingredientAmount;
+    let ingredientNum;
+    if (currentValue.includes('strIngredient')) {
+      ingredientNum = currentValue.slice(13);
+      ingredientName = meal[currentValue];
+      ingredientAmount = meal['strMeasure' + ingredientNum].trim();
+
+      if (ingredientName !== '') {
+        acc.ingredients[ingredientName] = ingredientAmount;
+      }
+    } else if (!currentValue.includes('strMeasure')) {
+      Object.assign(acc, {[currentValue]: meal[currentValue]})
+    }
+    return acc;
+  }, {ingredients: {}});
+  return meal;
 }
 
 export default getRandomMeal;
