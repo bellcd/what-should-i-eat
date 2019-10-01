@@ -1,19 +1,18 @@
 import React from 'react';
 import Ingredient from './ingredient.js';
 
-let Ingredients = ({ingredients}) => {
+let Ingredients = (props) => {
   let ingredientList;
-  if (ingredients !== null) {
-    ingredientList = Object.keys(ingredients).map((ingredient) => {
-      return <Ingredient name={ingredient} amount={ingredients[ingredient]}></Ingredient>
-    });
+  if (props.ingredients === null) {
+    ingredientList = <div></div>;
   } else {
-    ingredientList = <div></div>
+      ingredientList = Object.keys(props.ingredients).map((ingredient) => {
+      return <Ingredient name={ingredient} amount={props.ingredients[ingredient]}></Ingredient>
+    });
   }
 
-  console.log(ingredientList);
   return (
-    <div>{ingredientList}</div>
+    <ul className="ingredients">{ingredientList}</ul>
   );
 }
 export default Ingredients;

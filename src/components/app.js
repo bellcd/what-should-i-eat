@@ -2,6 +2,7 @@ import React from 'react';
 import Directions from './directions.js';
 import Ingredients from './ingredients.js';
 import getRandomMeal from '../utilities/networking.js';
+import './ingredients.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,14 +33,22 @@ class App extends React.Component {
   // }
 
   render() {
-
-    return (
-      <div>
+    let meal = this.state.meal;
+    if (meal === null) {
+      return (
         <button onClick={this.getMeal.bind(this)}>Get meal</button>
-        <Directions></Directions>
-        <Ingredients ingredients={this.state.meal ? this.state.meal.ingredients : {}}></Ingredients>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.getMeal.bind(this)}>Get meal</button>
+          <h1>{meal.strMeal}</h1>
+          <img src={meal.strMealThumb}></img>
+          <Directions directions={meal.strInstructions}></Directions>
+          <Ingredients ingredients={meal.ingredients}></Ingredients>
+        </div>
+      );
+    }
   }
 }
 
