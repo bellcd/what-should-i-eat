@@ -6,8 +6,8 @@ let Ingredients = (props) => {
   if (props.ingredients === null) {
     ingredientList = <div></div>;
   } else {
-      ingredientList = Object.keys(props.ingredients).map((ingredient) => {
-      return <Ingredient name={ingredient} amount={props.ingredients[ingredient]}></Ingredient>
+      ingredientList = Object.keys(props.ingredients).map((ingredient, i) => {
+      return <Ingredient name={ingredient} amount={props.ingredients[ingredient]} key={i}></Ingredient>
     });
   }
 
