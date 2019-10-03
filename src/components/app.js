@@ -3,6 +3,7 @@ import Directions from './directions.js';
 import Ingredients from './ingredients.js';
 import getRandomMeal from '../utilities/networking.js';
 import './ingredients.css';
+import './app.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -40,10 +41,12 @@ class App extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div className="container">
           <button onClick={this.getMeal.bind(this)}>Get meal</button>
           <h1>{meal.strMeal}</h1>
-          <img src={meal.strMealThumb}></img>
+          <div className="img-wrapper">
+            <img src={meal.strMealThumb}></img>
+          </div>
           <Directions directions={meal.strInstructions}></Directions>
           <Ingredients ingredients={meal.ingredients}></Ingredients>
         </div>
