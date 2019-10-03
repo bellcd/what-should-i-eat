@@ -1,5 +1,3 @@
-import { objectTypeSpreadProperty } from "@babel/types";
-
 let url = `https://www.themealdb.com/api/json/v1/1/random.php`;
 
 let getRandomMeal = () => {

@@ -38,7 +38,6 @@ class App extends React.Component {
     let buttonText = 'Get a Meal';
     let button = <button onClick={this.getMeal.bind(this)}>{buttonText}</button>;
     let h2Text;
-    let contents;
     let imgDiv;
     let directionsDiv;
     let ingredientsDiv;
@@ -53,7 +52,7 @@ class App extends React.Component {
       h2Text = meal.strMeal;
       imgDiv =
         <div className="img-wrapper">
-          <img src={meal.strMealThumb}></img>
+          <img src={meal.strMealThumb} alt={`a ${meal.strMealThumb}`}></img>
         </div>;
       directionsDiv = <Directions directions={meal.strInstructions}></Directions>;
       ingredientsDiv = <Ingredients ingredients={meal.ingredients}></Ingredients>;
