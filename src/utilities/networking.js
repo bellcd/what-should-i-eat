@@ -23,15 +23,13 @@ let organizeMeal = (meal) => {
   let keys = Object.keys(meal);
   meal = keys.reduce((acc, currentValue) => {
     let ingredientName;
-    let ingredientAmount;
     let ingredientNum;
     if (currentValue.includes('strIngredient')) {
       ingredientNum = currentValue.slice(13);
       ingredientName = meal[currentValue];
-      ingredientAmount = meal['strMeasure' + ingredientNum].trim();
 
-      if (ingredientName !== '') {
-        acc.ingredients[ingredientName] = ingredientAmount;
+      if (ingredientName !== '' && ingredientName !== null) {
+        acc.ingredients[ingredientName] = meal['strMeasure' + ingredientNum].trim();
       }
     } else if (!currentValue.includes('strMeasure')) {
       Object.assign(acc, {[currentValue]: meal[currentValue]})
