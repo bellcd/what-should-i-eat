@@ -1,5 +1,6 @@
 .ingredients {
-  color: red;
+  color: gray;
+  font-size: 0.85rem;
 }
 
 .amount {

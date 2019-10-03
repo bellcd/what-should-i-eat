@@ -35,23 +35,41 @@ class App extends React.Component {
 
   render() {
     let meal = this.state.meal;
+    let buttonText = 'Get a Meal';
+    let button = <button onClick={this.getMeal.bind(this)}>{buttonText}</button>;
+    let h2Text;
+    let contents;
+    let imgDiv;
+    let directionsDiv;
+    let ingredientsDiv;
+    let mealOrNoMeal = 'no-meal';
+
+
     if (meal === null) {
-      return (
-        <button onClick={this.getMeal.bind(this)}>Get meal</button>
-      );
+
     } else {
-      return (
-        <div className="container">
-          <button onClick={this.getMeal.bind(this)}>Get meal</button>
-          <h1>{meal.strMeal}</h1>
-          <div className="img-wrapper">
-            <img src={meal.strMealThumb}></img>
-          </div>
-          <Directions directions={meal.strInstructions}></Directions>
-          <Ingredients ingredients={meal.ingredients}></Ingredients>
-        </div>
-      );
+      mealOrNoMeal = 'meal';
+      buttonText = 'Get a New Meal';
+      h2Text = meal.strMeal;
+      imgDiv =
+        <div className="img-wrapper">
+          <img src={meal.strMealThumb}></img>
+        </div>;
+      directionsDiv = <Directions directions={meal.strInstructions}></Directions>;
+      ingredientsDiv = <Ingredients ingredients={meal.ingredients}></Ingredients>;
     }
+    return (
+      <div className={`container ${mealOrNoMeal}`}>
+        <header>
+          <h1>What Should I Eat?</h1>
+          <h2>{h2Text}</h2>
+        </header>
+        {imgDiv}
+        {directionsDiv}
+        {ingredientsDiv}
+        {button}
+      </div>
+    );
   }
 }
 
