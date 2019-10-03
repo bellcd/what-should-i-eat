@@ -8,7 +8,7 @@ let Directions = (props) => {
     directions = props.directions;
   }
   return (
-    <div className="directions">{directions}</div>
+    <div className="directions"><p>{directions}</p></div>
   );
 }
 
