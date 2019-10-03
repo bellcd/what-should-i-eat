@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/what-should-i-eat/static/css/main.55063a8e.chunk.css",
+    "main.js": "/what-should-i-eat/static/js/main.9c59b8e6.chunk.js",
+    "main.js.map": "/what-should-i-eat/static/js/main.9c59b8e6.chunk.js.map",
+    "runtime-main.js": "/what-should-i-eat/static/js/runtime-main.1bd73be4.js",
+    "runtime-main.js.map": "/what-should-i-eat/static/js/runtime-main.1bd73be4.js.map",
+    "static/js/2.351a2c06.chunk.js": "/what-should-i-eat/static/js/2.351a2c06.chunk.js",
+    "static/js/2.351a2c06.chunk.js.map": "/what-should-i-eat/static/js/2.351a2c06.chunk.js.map",
+    "index.html": "/what-should-i-eat/index.html",
+    "precache-manifest.9e3eaea720795d97cc6e2e4fd946ec38.js": "/what-should-i-eat/precache-manifest.9e3eaea720795d97cc6e2e4fd946ec38.js",
+    "service-worker.js": "/what-should-i-eat/service-worker.js",
+    "static/css/main.55063a8e.chunk.css.map": "/what-should-i-eat/static/css/main.55063a8e.chunk.css.map"
+  }
+}
