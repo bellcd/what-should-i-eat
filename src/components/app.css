@@ -27,8 +27,8 @@ p {
   align-items: center;
   justify-content: center;
   align-content: center;
-  padding: 5px;
-  grid-gap: 5px;
+  padding: 3rem;
+  grid-gap: 1rem;
   grid-template-columns: fit-content(800px) fit-content(800px);
   grid-template-rows: fit-content(150px) fit-content(300px) fit-content(300px) fit-content(300px);
   min-height: 100vh;
