@@ -1,11 +1,11 @@
 .ingredients {
   color: gray;
-  font-size: 0.95rem;
+  font-size: 1.4rem;
   letter-spacing: 1px;
 
 }
 
 .amount {
-  font-size: .85rem;
+  font-size: 1.2rem;
   font-style: italic;
 }
