@@ -1,9 +1,11 @@
 import React from 'react';
 import Directions from './directions.js';
 import Ingredients from './ingredients.js';
+import Video from './video.js';
 import getRandomMeal from '../utilities/networking.js';
 import './ingredients.css';
 import './app.css';
+import './video.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,6 +33,7 @@ class App extends React.Component {
     let directionsDiv;
     let ingredientsDiv;
     let mealOrNoMeal = 'no-meal';
+    let video;
 
 
     if (meal === null) {
@@ -43,6 +46,7 @@ class App extends React.Component {
         <div className="img-wrapper">
           <img src={meal.strMealThumb} alt={`a ${meal.strMealThumb}`}></img>
         </div>;
+      video = <Video url={meal.strYoutube.replace('watch?v=', 'embed/')}></Video>
       directionsDiv = <Directions directions={meal.strInstructions}></Directions>;
       ingredientsDiv = <Ingredients ingredients={meal.ingredients}></Ingredients>;
     }
@@ -53,6 +57,7 @@ class App extends React.Component {
           <h2>{h2Text}</h2>
         </header>
         {imgDiv}
+        {video}
         {directionsDiv}
         {ingredientsDiv}
         {button}

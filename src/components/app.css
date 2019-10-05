@@ -2,6 +2,7 @@ body, button {
   font-family: 'Annie Use Your Telescope', cursive;
 }
 
+/* HEADERS */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Reenie Beanie', cursive;
   letter-spacing: 5px;
@@ -28,8 +29,8 @@ p {
   align-content: center;
   padding: 5px;
   grid-gap: 5px;
-  grid-template-columns: fit-content(400px) fit-content(300px);
-  grid-template-rows: fit-content(150px) fit-content(300px) fit-content(300px);
+  grid-template-columns: fit-content(800px) fit-content(800px);
+  grid-template-rows: fit-content(150px) fit-content(300px) fit-content(300px) fit-content(300px);
   min-height: 100vh;
 }
 
@@ -37,12 +38,14 @@ p {
   grid-template-areas:
     "header header"
     "img-wrapper ingredients"
+    "video video"
     "directions directions"
     "button button"
 }
 
 .no-meal {
   grid-template-areas:
+    "header header"
     "header header"
     "header header"
     "button button"
@@ -70,6 +73,10 @@ img {
 
 .directions {
   grid-area: directions;
+}
+
+.video {
+  grid-area: video;
 }
 
 button {
