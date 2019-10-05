@@ -22,17 +22,6 @@ class App extends React.Component {
       });
   }
 
-  // comments on using one style of getMeal (along with getRandomMeal in networking.js) over the other?
-  // getMeal() {
-  //   let callback = function(meal) {
-  //     this.setState((state) => {
-  //       return { meal: meal }
-  //     });
-  //   }
-
-  //   getRandomMeal(callback.bind(this));
-  // }
-
   render() {
     let meal = this.state.meal;
     let buttonText = 'Get a Meal';

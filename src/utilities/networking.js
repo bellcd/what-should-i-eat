@@ -8,15 +8,6 @@ let getRandomMeal = () => {
   });
 }
 
-// let getRandomMeal = (callback) => {
-//   let meal = fetch(url)
-//   .then((res) => res.json())
-//   .then((res) => {
-//     meal = res.meals[0];
-//     callback(meal);
-//   });
-// }
-
 let organizeMeal = (meal) => {
   let keys = Object.keys(meal);
   meal = keys.reduce((acc, currentValue) => {
