@@ -38,8 +38,8 @@ class App extends React.Component {
 
   render() {
     let meal = this.state.meal;
-    let buttonText = 'Get A Meal';
-    let button = <button onClick={this.getMeal.bind(this)}>{buttonText}</button>;
+    let button = <button onClick={this.getMeal.bind(this)}>Get A Meal</button>;
+    // These variables start as undefined, so the render method below does NOT render them on the splash page
     let h2Text;
     let imgDiv;
     let directionsDiv;
@@ -50,6 +50,7 @@ class App extends React.Component {
     if (meal === null) {
 
     } else {
+      // They get rendered only when the state changes (ie, the user clicked to get a meal)
       h2Text = meal.strMeal;
       imgDiv =
         <div className="img-wrapper">
