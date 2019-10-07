@@ -4,7 +4,7 @@ let Video = (props) => {
   console.log('props.url: ', props.url);
   return (
     <div className="video">
-      <iframe
+      <iframe title="Recipe Video"
         src={props.url}
         allowFullScreen
         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"

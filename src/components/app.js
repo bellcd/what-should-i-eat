@@ -71,7 +71,7 @@ class App extends React.Component {
         {directionsDiv}
         {ingredientsDiv}
         {button}
-        <footer className="hide">Made with ❤️ by <a href="https://bellcd.github.io/">Christian Bell</a></footer>
+        <footer className="hide">Made with <span role="img" aria-label="heart">❤️</span> by <a href="https://bellcd.github.io/">Christian Bell</a></footer>
       </div>
     );
   }
