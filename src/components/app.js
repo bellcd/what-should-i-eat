@@ -22,6 +22,7 @@ class App extends React.Component {
       document.querySelector('div.intro').classList = '';
       document.querySelector('footer').classList = 'show';
       document.querySelector('button').textContent = 'Get A New Meal';
+      document.querySelector('#root').classList = 'meal-root';
     }
 
     getRandomMeal()
