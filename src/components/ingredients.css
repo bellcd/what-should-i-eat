@@ -9,3 +9,10 @@
   font-size: 1.2rem;
   font-style: italic;
 }
+
+.ingredients div p {
+  font-size: 2rem;
+  line-height: 0.3;
+  padding: 0;
+  margin: 0;
+}

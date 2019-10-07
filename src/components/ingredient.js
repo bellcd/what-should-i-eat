@@ -2,7 +2,11 @@ import React from 'react';
 
 let Ingredient = ({name, amount}) => {
   return (
-    <div>{name}, <span className="amount">{amount}</span></div>
+    <div>{name}
+      <p>
+        <span className="amount">{amount}</span>
+      </p>
+    </div>
   );
 }
 export default Ingredient
