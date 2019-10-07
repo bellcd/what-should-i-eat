@@ -64,11 +64,13 @@ class App extends React.Component {
           <h1>What Should I Eat?</h1>
           <h2>{h2Text}</h2>
         </header>
+        <div className="main">
+        {imgDiv}
+        {directionsDiv}
+        </div>
         <div className="media">
-          {imgDiv}
           {video}
         </div>
-        {directionsDiv}
         {ingredientsDiv}
         {button}
         <footer className="hide">Made with <span role="img" aria-label="heart">❤️</span> by <a href="https://bellcd.github.io/">Christian Bell</a></footer>
