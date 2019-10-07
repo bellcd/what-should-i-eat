@@ -21,6 +21,7 @@ class App extends React.Component {
       e.target.classList = 'meal';
       document.querySelector('div.intro').classList = '';
       document.querySelector('footer').classList = 'show';
+      document.querySelector('button').textContent = 'Get A New Meal';
     }
 
     getRandomMeal()
@@ -36,7 +37,7 @@ class App extends React.Component {
 
   render() {
     let meal = this.state.meal;
-    let buttonText = 'Get a Meal';
+    let buttonText = 'Get A Meal';
     let button = <button onClick={this.getMeal.bind(this)}>{buttonText}</button>;
     let h2Text;
     let imgDiv;
@@ -48,7 +49,6 @@ class App extends React.Component {
     if (meal === null) {
 
     } else {
-      buttonText = 'Get a New Meal';
       h2Text = meal.strMeal;
       imgDiv =
         <div className="img-wrapper">
@@ -71,7 +71,7 @@ class App extends React.Component {
         {directionsDiv}
         {ingredientsDiv}
         {button}
-        <footer className="hide">Made with by ❤️ <a href="https://bellcd.github.io/">Christian Bell</a></footer>
+        <footer className="hide">Made with ❤️ by <a href="https://bellcd.github.io/">Christian Bell</a></footer>
       </div>
     );
   }

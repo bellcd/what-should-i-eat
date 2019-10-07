@@ -40,6 +40,8 @@ p {
 
 .meal {
   position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .media {
@@ -61,8 +63,7 @@ button {
   display: block;
   padding: 1rem;
   font-size: 1.8rem;
-  bottom: 0px;
-  right: 0px;
+  letter-spacing: 0.5rem;
 }
 
 
