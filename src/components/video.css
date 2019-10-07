@@ -1,6 +1,9 @@
+/* TODO: figure out better solution for image and video display */
 .video {
   position: relative;
   padding-bottom: 56.25%;
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 .video iframe {

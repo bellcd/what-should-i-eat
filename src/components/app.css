@@ -19,64 +19,41 @@ h2 {
 p {
   font-size: 2rem;
   letter-spacing: 1px;
+  padding: 4rem;
 }
 
-/* GRID */
-.container {
-  display: grid;
-  align-items: center;
+/* MAIN CONTENT */
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
-  padding: 3rem;
-  grid-gap: 1rem;
-  grid-template-columns: fit-content(800px) fit-content(800px);
-  grid-template-rows: fit-content(150px) fit-content(300px) fit-content(300px) fit-content(300px);
-  min-height: 100vh;
 }
 
 .meal {
-  grid-template-areas:
-    "header header"
-    "img-wrapper ingredients"
-    "video video"
-    "directions directions"
-    "button button"
+  position: fixed;
 }
 
-.no-meal {
-  grid-template-areas:
-    "header header"
-    "header header"
-    "header header"
-    "button button"
-    "button button"
-}
-
-/* GRID ITEMS */
-header {
-  grid-area: header;
+.media {
+  margin: 0 auto;
   text-align: center;
 }
 
-.img-wrapper {
-  grid-area: img-wrapper;
+header {
+  text-align: center;
 }
 
 img {
-  max-width: 100%;
+  max-width: 20rem;
   box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.25);
-}
-
-.ingredients {
-  grid-area: ingredients;
-}
-
-.directions {
-  grid-area: directions;
-}
-
-.video {
-  grid-area: video;
 }
 
 button {
@@ -84,5 +61,20 @@ button {
   display: block;
   padding: 1rem;
   font-size: 1.8rem;
-  grid-area: button;
+  bottom: 0px;
+  right: 0px;
+}
+
+
+.ingredients {
+  display: grid;
+  grid: auto / repeat(auto-fill, 12rem);
+  justify-content: center;
+  grid-gap: 2rem;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  padding: 1rem;
 }

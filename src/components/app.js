@@ -11,15 +11,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      meal: null
+      meal: null,
+      intro: true
     }
   }
 
-  getMeal() {
+  getMeal(e) {
+    if (this.state.intro) {
+      e.target.classList = 'meal';
+      document.querySelector('div.intro').classList = '';
+      document.querySelector('footer').classList = 'show';
+    }
+
     getRandomMeal()
       .then((meal) => {
         this.setState((state) => {
-          return { meal: meal }
+          return {
+            meal: meal,
+            intro: false
+           }
         });
       });
   }
@@ -32,14 +42,12 @@ class App extends React.Component {
     let imgDiv;
     let directionsDiv;
     let ingredientsDiv;
-    let mealOrNoMeal = 'no-meal';
     let video;
 
 
     if (meal === null) {
 
     } else {
-      mealOrNoMeal = 'meal';
       buttonText = 'Get a New Meal';
       h2Text = meal.strMeal;
       imgDiv =
@@ -51,16 +59,19 @@ class App extends React.Component {
       ingredientsDiv = <Ingredients ingredients={meal.ingredients}></Ingredients>;
     }
     return (
-      <div className={`container ${mealOrNoMeal}`}>
+      <div className="intro">
         <header>
           <h1>What Should I Eat?</h1>
           <h2>{h2Text}</h2>
         </header>
-        {imgDiv}
-        {video}
+        <div className="media">
+          {imgDiv}
+          {video}
+        </div>
         {directionsDiv}
         {ingredientsDiv}
         {button}
+        <footer className="hide">Made with by ❤️ <a href="https://bellcd.github.io/">Christian Bell</a></footer>
       </div>
     );
   }

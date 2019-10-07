@@ -12,7 +12,7 @@ let Ingredients = (props) => {
   }
 
   return (
-    <ul className="ingredients">{ingredientList}</ul>
+    <div className="ingredients">{ingredientList}</div>
   );
 }
 export default Ingredients;
